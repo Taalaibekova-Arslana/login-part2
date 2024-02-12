@@ -9,9 +9,9 @@ const url =
 const Registration = () => {
 	const [name, setName] = useState("");
 	const [password, setPassword] = useState("");
-	
+
 	const navigate = useNavigate();
-	// ! Логика 
+	// ! Логика
 	const handleLogin = async () => {
 		if (name === "" || password === "") {
 			alert("Заполните поле!");
@@ -32,7 +32,7 @@ const Registration = () => {
 
 		try {
 			const response = await axios.post(url, { name, password });
-
+			
 			if (response.status === 200 || response.status === 201) {
 				localStorage.setItem("login", name);
 				localStorage.setItem("password", password);
